@@ -1,0 +1,33 @@
+GET http://127.0.0.1:3000/hello
+###
+GET http://127.0.0.1:3000/cars
+###
+PATCH http://127.0.0.1:3000/car/1
+Content-Type: application/json
+
+{
+    "status": "reserved"
+}
+###
+DELETE http://127.0.0.1:3000/car/2
+###
+POST http://127.0.0.1:3000/car
+content-type: application/json
+
+{
+    "title": "Bargain!",
+    "status": "available",
+    "price": "367.100 $",
+    "image": "http://localhost:3000/images/car9.png",
+    "miles": 85549,
+    "yearOfMake": 2012,
+    "owner": {
+    "firstName": "Robert",
+    "lastName": "Baumgartner"
+    },
+    "description": "Lorem ipsum dolor sit amet."
+}
+###
+GET http://127.0.0.1:3000/cars?id=6
+###
+GET http://127.0.0.1:3000/cars?firstName=Haroon&&lastName=Younas

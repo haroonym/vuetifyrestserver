@@ -17,10 +17,6 @@ router.get('/hello', (req, res) => res.send('Hello'));
 router.get(
   '/cars',
   asyncHandler(async (req, res) => {
-    if (req.query.id) {
-      const result = await getCarsByID(req.query);
-      res.status(200).json(result);
-    }
     if (req.query.firstName && req.query.lastName) {
       const result = await getCarsByName(req.query);
       res.status(200).json(result);
@@ -28,6 +24,14 @@ router.get(
       const result = await getCars();
       res.status(200).json(result);
     }
+  }),
+);
+
+router.get(
+  '/car/:id',
+  asyncHandler(async (req, res) => {
+    const result = await getCarsByID(req.params.id);
+    res.status(200).json(result);
   }),
 );
 

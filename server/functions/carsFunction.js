@@ -28,8 +28,7 @@ function postCar(c) {
 }
 //
 
-function getCarsByID(query) {
-  const { id } = query;
+function getCarsByID(id) {
   if (id) {
     const carbyid = cars.find((el) => el.id == id);
     if (carbyid) {
